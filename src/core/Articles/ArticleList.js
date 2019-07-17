@@ -1,12 +1,14 @@
-import React from 'react'
-import 
+import React from "react";
+import {connect} from 'react-redux'
+import {fetchArticles} from '../../actions'
 
-
-const byTheAlphabet =(props)=>{
-	return(
-		<div className={` `}>byTheAlphabet</div>
-	)
+class byTheAlphabet extends React.Component {
+	componentDidMount(){
+		this.props.fetchArticles()
+	}
+	render() {
+		return <div className={` `}>byTheAlphabet</div>;
+	}
 }
 
-
-export default byTheAlphabet
+export default connect(null, {fetchArticles})(byTheAlphabet)

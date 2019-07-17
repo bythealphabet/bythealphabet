@@ -1,0 +1,1 @@
+export const SHOW_ARTICLES = "SHOW_ARTICLES"
