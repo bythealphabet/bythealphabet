@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
+import MainRouter from "./MainRouter";
+import { BrowserRouter } from "react-router-dom";
 
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Bythealphabet</h1>
-    </div>
+    <BrowserRouter>
+      <MainRouter />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
