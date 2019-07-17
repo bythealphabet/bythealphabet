@@ -1,1 +1,1 @@
-export const SHOW_ARTICLES = "SHOW_ARTICLES"
+export const FETCH_ARTICLES = "FETCH_ARTICLES"

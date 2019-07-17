@@ -1,5 +1,5 @@
 import {combineReducers} from "redux"
+import articleReducer from './articleReducer'
 
-const bam = () =>  'pam'
 
-export default combineReducers({bam: bam})
+export default combineReducers({articles: articleReducer})
