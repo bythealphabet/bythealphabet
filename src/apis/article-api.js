@@ -1,5 +1,5 @@
 const list = () => {
-  return fetch("/api/article/", {
+  return fetch("http://localhost:5000/article", {
     method: "GET"
   })
     .then(response => {
