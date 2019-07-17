@@ -1,9 +1,6 @@
 const list = () => {
-<<<<<<< HEAD
-  return fetch("http://localhost:5000/article", {
-=======
+
   return fetch("http://localhost:5000/api/article", {
->>>>>>> devComp
     method: "GET"
   })
     .then(response => {
