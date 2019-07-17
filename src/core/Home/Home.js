@@ -29,7 +29,7 @@ const renderButtons = () =>{
 const Home = props => {
 	const index = true;
 	return (
-		<div className={` `}>
+		<div className={`section `}>
 			<HeroLogo pages={index} />
 			<FrontPage right={renderButtons()} />
 		</div>
