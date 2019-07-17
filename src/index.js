@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// bulma import for css styling
+import "./index.css"
+import "bulma/css/bulma.css";
+
 import App from './App';
 
 
