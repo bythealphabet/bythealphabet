@@ -14,9 +14,12 @@ const heroLogo =({pages})=>{
 		hero = (
 			<div className={`hero-body  ${styles.Center}`}>
 				<div className={`center  ${styles.Container}`}>
-				   <figure className="image center">
-				     <img src={threedlogo} alt="bythealphabet.com logo img"/>
-				   </figure>
+					<Link to={"/"} >
+						<figure className="image center">
+						  <img src={threedlogo} alt="bythealphabet.com logo img"/>
+						</figure>
+					</Link>
+				   
 				</div>
 			</div>
 			
@@ -27,9 +30,12 @@ const heroLogo =({pages})=>{
 			<div className={`  ${styles.ContainerPages}`}> 
 			  <Tilt className="Tilt" options={{ max : 50 }} >
 			   <div className="Tilt-inner">
-			   		 <figure className="image center">
+			  <Link to={"/"} >
+			   	<figure className="image center">
 			   		   <img src={twodlogo} alt="bythealphabet.com logo img"/>
 			   		 </figure>
+			   </Link>
+			   		 
 			   </div>
 			  </Tilt>
 			</div>
@@ -37,9 +43,10 @@ const heroLogo =({pages})=>{
 	}
 
 	return(
-		<Link to={"/"} >
-		    {hero}
-	  	</Link>
+		<div>
+			{hero}
+		</div>
+		    
 	)
 }
 
