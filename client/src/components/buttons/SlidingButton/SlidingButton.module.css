@@ -1,0 +1,70 @@
+.Container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.Container p{	
+	position: relative;
+	height: 2.5em;
+	width: 300px;
+	line-height: 2.5em;
+	text-align:center;
+	text-transform: capitalize;
+	overflow: hidden;
+	font-weight: 600;
+	
+	/* background-color: #fff; */
+    color: #000;
+	border: solid .5px #A3E5E3;
+}
+
+.Container p span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: 0.8s ease-out;
+}
+/* 
+p .Close{
+	left: 0;
+	display: none;
+} */
+
+ /* p:hover .Close{
+	left: 100%;
+} */
+
+.Container:nth-child(2) .Open, .Container:nth-child(4) .Open, .Container:nth-child(6) .Open {
+	height: 2.5em;
+	background:rgba(22, 197, 139, 0.808);
+	left: -100%;
+}
+
+.Container:nth-child(1) .Open, .Container:nth-child(3) .Open, .Container:nth-child(5) .Open {
+	height: 2.5em;
+	background:rgba(22, 197, 139, 0.808);
+	left: 100%;
+}
+
+.Container p .Close{
+	color: rgb(48, 75, 116);
+}
+
+
+.Container p:hover .Open{
+	color: #fff;
+	left: 0%;
+	transition: .3s;
+}
+
+
+
+.Container p:hover .Close{
+	font-weight: 600;
+	color: #fff;
+	transition: .2s;
+
+}
