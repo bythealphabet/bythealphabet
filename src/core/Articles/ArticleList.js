@@ -11,7 +11,6 @@ class ArticlesList extends React.Component {
 	}
 
 	render() {
-		console.log('props:',this.props)
 		if(!this.props.articles){
 			return <div>Loading .....</div>
 		}

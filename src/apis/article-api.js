@@ -15,9 +15,9 @@ const create = (credentials, data )=> {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: "Bearer " + credentials.t
+      Authorization: "Bearer " + credentials
     },
-    body: JSON.stringify(data.article)
+    body: JSON.stringify(data)
   })
     .then(response => {
       console.log("succes article created");
@@ -25,6 +25,7 @@ const create = (credentials, data )=> {
     })
     .catch(err => console.log(err));
 };
+
 
 const read = params => {
   return fetch(`/api/article/${params.articleId}`, {

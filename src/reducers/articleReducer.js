@@ -1,18 +1,18 @@
 import _ from "lodash";
-import { FETCH_ARTICLES } from "../actions/types";
+import * as art from "../actions/types";
 
 export default (state = {}, action) => {
 	switch (action.type) {
-		case FETCH_ARTICLES:
+		case art.FETCH_ARTICLES:
 			return { ...state, ..._.mapKeys(action.payload, "_id") };
-		// case FETCH_STREAM:
-		// 	return { ...state, [action.payload.id]: action.payload };
-		// case CREATE_STREAM:
-		// 	return { ...state, [action.payload.id]: action.payload };
-		// case EDIT_STREAM:
-		// 	return { ...state, [action.payload.id]: action.payload };
-		// case DELETE_STREAM:
-		// 	return _.omit(state, action.payload);
+		case art.FETCH_ARTICLE:
+			return { ...state, [action.payload.id]: action.payload };
+		case art.CREATE_ARTICLES:
+			return { ...state, [action.payload.id]: action.payload };
+		case art.EDIT_ARTICLES:
+			return { ...state, [action.payload.id]: action.payload };
+		case art.DELETE_ARTICLES:
+			return _.omit(state, action.payload);
 		default:
 			return state;
 	}
