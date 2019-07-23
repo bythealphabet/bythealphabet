@@ -1,14 +1,27 @@
 import React from "react";
 import styles from "./Signin.module.css";
-import { connect } from "react-redux";
-import { signIn} from "../../../actions";
+import { signin} from "../../../apis/auth/api-auth";
+import auth from "../../../apis/auth/auth-helper";
+import history from '../../../history'
 
-import SignInForm from "../SignInForm/SignInForm";
+import SignInForm from "./SignInForm/SignInForm";
 
-class Signup extends React.Component {
+class SignIn extends React.Component {
+
 	onSubmit = user => {
-		this.props.signIn(user)
+		signin(user).then(data=>{
+			if(data.error){
+				return console.log('error:',data.error)
+			}else{
+				auth.authenticate(data, ()=> this.redirect())
+			}	
+		})
 	};
+
+	redirect = () => {
+		window.location.reload()
+	};
+
 
 	render() {
 		return (
@@ -31,7 +44,4 @@ class Signup extends React.Component {
 
 
 
-export default connect(
-	null,
-	{ signIn}
-)(Signup);
+export default SignIn

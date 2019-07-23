@@ -1,16 +1,17 @@
 import * as call from "../apis/article-api";
-import { signin, signout } from "../apis/auth/api-auth";
-import auth from "../apis/auth/auth-helper";
+// import { signin, signout } from "../apis/auth/api-auth";
+// import auth from "../apis/auth/auth-helper";
 import * as art from "./types";
 import history from '../history'
 
-const signIn = user => dispatch => {
+const signIn = userId => {
 	return {
-		type: "SIGN_IN"
+		type: "SIGN_IN",
+		payload: userId
 	}
 };
 
-const signOut = user => async dispatch => {
+const signOut = user => {
 	return {
 		type: "SIGN_OUT"
 	}
@@ -22,6 +23,7 @@ const fetchArticles = () => async dispatch => {
 		type: art.FETCH_ARTICLES,
 		payload: response
 	});
+
 };
 
 const createArticles = data => async dispatch => {
@@ -30,6 +32,7 @@ const createArticles = data => async dispatch => {
 		type: art.CREATE_ARTICLES,
 		payload: response
 	});
+	history.push('/articles')
 };
 
 const editArticles = data => async dispatch => {

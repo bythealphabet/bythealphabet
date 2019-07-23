@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem/NavItem";
-import SignOut from '../../../core/Admin/SignOut'
+import AdminAuth from '../../../core/Admin/AdminAuth'
 
 
 const navPath = [
@@ -23,11 +23,7 @@ const Nav = (props) => {
 		<div className="container">
 			<nav className="navbar is-transparent" >
 				<div className="navbar-brand">
-				<div className="navbar-item">
-					{
-						true ? <SignOut /> : null
-					}
-				</div>
+				<AdminAuth />
 				
 					
 					<div
