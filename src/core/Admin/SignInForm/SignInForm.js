@@ -14,7 +14,6 @@ class SignInForm extends React.Component {
 	};
 
 	onSubmit = (data) =>{
-		console.log('data:',data)
 		this.props.onSubmit(data)
 	}
 
@@ -26,7 +25,7 @@ class SignInForm extends React.Component {
 					<div className="control">
 						<Field
 							type="text"
-							name="admin"
+							name="name"
 							placeholder="admin"
 							component={this.renderInput}
 						/>

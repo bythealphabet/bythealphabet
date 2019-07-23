@@ -1,32 +1,13 @@
 import React from "react";
 import styles from "./Signin.module.css";
-import {connect} from 'react-redux'
-// import auth from "../../../apis/auth/auth-helper";
-// import { Redirect } from "react-router-dom";
-// import { signin } from "../../../apis/auth/api-auth.js";
-import {signIn} from '../../../actions'
+import { connect } from "react-redux";
+import { signIn} from "../../../actions";
 
-import SignInForm from '../SignInForm/SignInForm'
+import SignInForm from "../SignInForm/SignInForm";
 
 class Signup extends React.Component {
-
-	onSubmit = (user) => {
-		console.log('user:',user)
-		
+	onSubmit = user => {
 		this.props.signIn(user)
-		// signIn(user)
-		// 	.then(data => {
-		// 		if (data.error) {
-		// 			this.setState({ error: data.error });
-		// 		} else {
-		// 			auth.authenticate(data, () => {
-		// 				this.setState({ redirectToReferrer: true });
-		// 			});
-		// 		}
-		// 	})
-		// 	.catch(err => {
-		// 		this.setState({ error: err });
-		// 	});
 	};
 
 	render() {
@@ -39,7 +20,7 @@ class Signup extends React.Component {
 					</h2>
 					<div className="columns">
 						<div className="column is-10">
-							<SignInForm onSubmit={this.onSubmit}/>
+							<SignInForm onSubmit={this.onSubmit} />
 						</div>
 					</div>
 				</div>
@@ -48,4 +29,9 @@ class Signup extends React.Component {
 	}
 }
 
-export default connect(null,{signIn})(Signup);
+
+
+export default connect(
+	null,
+	{ signIn}
+)(Signup);

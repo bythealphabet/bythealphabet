@@ -1,5 +1,5 @@
 const signin = (user) => {
-  return fetch('http://localhost:5000/auth/signin/', {
+  return fetch('/auth/signin/', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

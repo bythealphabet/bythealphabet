@@ -1,19 +1,29 @@
 import React from "react";
-import {connect} from 'react-redux'
-import {fetchArticles} from '../../actions'
+import { connect } from "react-redux";
+import { fetchArticles} from "../../actions";
 
-import HeroLogo from '../../components/HeroLogo/HeroLogo'
-import ArticleCard from '../../components/ArticleCard/ArticleCard'
+import HeroLogo from "../../components/HeroLogo/HeroLogo";
+import ArticleCard from "../../components/ArticleCard/ArticleCard";
 
 class ArticlesList extends React.Component {
 	componentDidMount() {
-		this.props.fetchArticles()
+		this.props.fetchArticles();
 	}
 
+	renderAdminButtons = () => {
+		return(
+			<div className="buttons">
+				<button className="button is-warning">edit</button>
+				<button className="button is-danger">X</button>
+			</div>
+		)
+	};
+
 	render() {
-		if(!this.props.articles){
-			return <div>Loading .....</div>
+		if (!this.props.articles) {
+			return <div>Loading .....</div>;
 		}
+
 		return (
 			<section className="section">
 				<HeroLogo />
@@ -28,8 +38,8 @@ class ArticlesList extends React.Component {
 											intro={i.intro}
 											image={i.image}
 											path={`/article/${i._id}`}
-										>
-										</ArticleCard>
+
+										>{this.props.allowed ? this.renderAdminButtons() : null}</ArticleCard>
 									</div>
 								);
 							})}
@@ -41,8 +51,14 @@ class ArticlesList extends React.Component {
 	}
 }
 
-const mapStateToProps = (state, ownProps)=>{
-	return {articles: Object.values(state.articles)}
-}
+const mapStateToProps = (state, ownProps) => {
+	return {
+		articles: Object.values(state.articles),
+		allowed: state.auth.isSignedIn
+	};
+};
 
-export default connect(mapStateToProps,{fetchArticles})(ArticlesList);
+export default connect(
+	mapStateToProps,
+	{ fetchArticles }
+)(ArticlesList);

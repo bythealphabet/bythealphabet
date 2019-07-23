@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
 import NavItem from "./NavItem/NavItem";
+import SignOut from '../../../core/Admin/SignOut'
+
 
 const navPath = [
 	{link:'Home', path: '/'},
@@ -15,13 +16,20 @@ const renderNavItem = () =>{
 	return item
 }
 
-const Nav = ({history}) => {
+const Nav = (props) => {
 	const [active, setActive] = useState(false);
 
 	return (
 		<div className="container">
 			<nav className="navbar is-transparent" >
 				<div className="navbar-brand">
+				<div className="navbar-item">
+					{
+						true ? <SignOut /> : null
+					}
+				</div>
+				
+					
 					<div
 						onClick={() => setActive(!active)}
 						className={`navbar-burger burger ${
@@ -47,6 +55,6 @@ const Nav = ({history}) => {
 	);
 };
 
-const Header = withRouter(({ history }) => <Nav history={history} />);
+// const Header = withRouter(({ history }) => <Nav history={history} />);
 
-export default Header;
+export default Nav;

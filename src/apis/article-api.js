@@ -1,6 +1,5 @@
 const list = () => {
-
-  return fetch("http://localhost:5000/api/article", {
+  return fetch("/api/article", {
     method: "GET"
   })
     .then(response => {
@@ -15,9 +14,9 @@ const create = (credentials, data )=> {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: "Bearer " + credentials
+      Authorization: "Bearer " + credentials.t
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data.article)
   })
     .then(response => {
       console.log("succes article created");
@@ -25,7 +24,6 @@ const create = (credentials, data )=> {
     })
     .catch(err => console.log(err));
 };
-
 
 const read = params => {
   return fetch(`/api/article/${params.articleId}`, {
