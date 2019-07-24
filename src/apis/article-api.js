@@ -26,7 +26,7 @@ const create = (credentials, data )=> {
 };
 
 const read = params => {
-  return fetch(`/api/article/${params.articleId}`, {
+  return fetch(`/api/article/${params}`, {
     method: "GET",
     headers: {
       Accept: "application/json",

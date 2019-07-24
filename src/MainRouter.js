@@ -13,6 +13,7 @@ import Signin from './core/Admin/Signin/Signin'
 import ArticleList from './core/Articles/ArticleList'
 import ArticleCreate from './core/Articles/ArticleCreate'
 import ArticleEdit from './core/Articles/ArticleEdit'
+import ArticleShow from './core/Articles/ArticleShow'
 
 // Header and Footer Layout
 import Layout from "./layout/Layout/Layout"
@@ -27,6 +28,7 @@ const MainRouter = props => {
 				<Route path={'/signin'} component={Signin} />
 				<PrivateRoute path="/admin/create" component={ArticleCreate} />
 				<PrivateRoute path="/admin/edit/:articleId" component={ArticleEdit}/>
+				<Route path={'/article/:articleId'} component={ArticleShow} />
 			</Switch>
 		</Layout>
 	);
