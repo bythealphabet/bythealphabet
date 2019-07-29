@@ -8,15 +8,16 @@ const list = () => {
     .catch(err => console.log(err));
 };
 
-const create = (credentials, data )=> {
+const create = (data )=> {
+
   return fetch("/api/article/", {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + credentials.t
+      "Content-Type": "application/json"
+      // ,Authorization: "Bearer " + credentials
     },
-    body: JSON.stringify(data.article)
+    body: JSON.stringify(data)
   })
     .then(response => {
       console.log("succes article created");

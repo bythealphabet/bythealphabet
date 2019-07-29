@@ -31,6 +31,7 @@ class ArticlesList extends React.Component {
 					<div className="container">
 						<div className="columns is-multiline">
 							{this.props.articles.map(i => {
+								console.log('id:',i._id)
 								return (
 									<div className="column is-4" key={i._id}>
 										<ArticleCard

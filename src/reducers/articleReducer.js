@@ -8,7 +8,8 @@ export default (state = {}, action) => {
 		case art.READ_ARTICLE:
 			return { ...state, article: action.payload };
 		case art.CREATE_ARTICLES:
-			return { ...state, [action.payload.id]: action.payload };
+			// state = _.extend(article, req.body)
+			return { ...state, article: action.payload };
 		case art.EDIT_ARTICLES:
 			return { ...state, [action.payload.id]: action.payload };
 		case art.DELETE_ARTICLES:

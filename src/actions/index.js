@@ -35,6 +35,7 @@ const readArticle = param => async dispatch => {
 
 const createArticles = data => async dispatch => {
 	const response = await call.create(data);
+	console.log('data:',data)
 	dispatch({
 		type: art.CREATE_ARTICLES,
 		payload: response
