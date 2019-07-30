@@ -10,15 +10,6 @@ class ArticlesList extends React.Component {
 		this.props.fetchArticles();
 	}
 
-	renderAdminButtons = () => {
-		return(
-			<div className="buttons">
-				<button className="button is-warning">edit</button>
-				<button className="button is-danger">X</button>
-			</div>
-		)
-	};
-
 	render() {
 		if (!this.props.articles) {
 			return <div>Loading .....</div>;
@@ -31,7 +22,6 @@ class ArticlesList extends React.Component {
 					<div className="container">
 						<div className="columns is-multiline">
 							{this.props.articles.map(i => {
-								console.log('id:',i._id)
 								return (
 									<div className="column is-4" key={i._id}>
 										<ArticleCard
@@ -40,7 +30,7 @@ class ArticlesList extends React.Component {
 											image={i.image}
 											path={`/article/${i._id}`}
 
-										>{this.props.allowed ? this.renderAdminButtons() : null}</ArticleCard>
+										></ArticleCard>
 									</div>
 								);
 							})}
@@ -52,10 +42,9 @@ class ArticlesList extends React.Component {
 	}
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 	return {
-		articles: Object.values(state.articles),
-		allowed: state.auth.isSignedIn
+		articles: Object.values(state.articles)
 	};
 };
 

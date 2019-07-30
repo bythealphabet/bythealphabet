@@ -1,62 +1,26 @@
-// import * as call from "../apis/article-api";
-import * as call from "../apis/heroku-api";
-// import { signin, signout } from "../apis/auth/api-auth";
-// import auth from "../apis/auth/auth-helper";
-import * as art from "./types";
-import history from "../history";
+// import {list, read} from "../apis/article-api";
+import {list, read} from "../apis/heroku-api";
 
-const signIn = userId => {
-	return {
-		type: "SIGN_IN",
-		payload: userId
-	};
-};
-
-const signOut = user => {
-	return {
-		type: "SIGN_OUT"
-	};
-};
+import {FETCH_ARTICLES, READ_ARTICLE} from "./types";
 
 const fetchArticles = () => async dispatch => {
-	const response = await call.list();
+	const response = await list();
 	dispatch({
-		type: art.FETCH_ARTICLES,
+		type: FETCH_ARTICLES,
 		payload: response
 	});
 };
 
 const readArticle = param => async dispatch => {
-	const response = await call.read(param);
+	const response = await read(param);
 	dispatch({
-		type: art.READ_ARTICLE,
+		type: READ_ARTICLE,
 		payload: response
 	});
 };
 
-const createArticles = data => async dispatch => {
-	const response = await call.create(data);
-	console.log('data:',data)
-	dispatch({
-		type: art.CREATE_ARTICLES,
-		payload: response
-	});
-	history.push("/articles");
-};
-
-const editArticles = data => async dispatch => {
-	const response = await call.update(data);
-	dispatch({
-		type: art.EDIT_ARTICLES,
-		payload: response
-	});
-};
 
 export {
 	fetchArticles,
-	createArticles,
-	editArticles,
-	signIn,
-	signOut,
 	readArticle
 };

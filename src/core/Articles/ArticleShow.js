@@ -10,11 +10,11 @@ import {connect} from 'react-redux'
 class ArticleShow extends React.Component {
 	
 	componentDidMount(){
-		this.init(this.props.match.params.articleId)
+		this.init(this.props.match.params.id)
 	}
 
-	init = articleId => {
-		this.props.readArticle(articleId)
+	init = id => {
+		this.props.readArticle(id)
 	};
 
 	render() {
@@ -36,8 +36,8 @@ class ArticleShow extends React.Component {
 	}
 }
 
-const mapStateToProps = (state) =>{
-	return {article: state.articles.article}
+const mapStateToProps = (state, ownProps) =>{
+	return {article: state.articles[ownProps.match.params.id]}
 }
 
 export default connect(mapStateToProps,{readArticle})(ArticleShow);

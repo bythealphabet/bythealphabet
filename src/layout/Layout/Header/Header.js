@@ -1,31 +1,26 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem/NavItem";
-import AdminAuth from '../../../core/Admin/AdminAuth'
-
 
 const navPath = [
-	{link:'Home', path: '/'},
-	{link: 'Articles', path: '/articles'},
-	{link: 'About', path: '/about'}
-]
-	 
-const renderNavItem = () =>{
-	const item = navPath.map(go=>{
-		return <NavItem key={go.link} link={go.link} path={go.path} />
-	})
-	return item
-}
+	{ link: "Home", path: "/" },
+	{ link: "Articles", path: "/articles" },
+	{ link: "About", path: "/about" }
+];
 
-const Nav = (props) => {
+const renderNavItem = () => {
+	const item = navPath.map(go => {
+		return <NavItem key={go.link} link={go.link} path={go.path} />;
+	});
+	return item;
+};
+
+const Nav = props => {
 	const [active, setActive] = useState(false);
 
 	return (
 		<div className="container">
-			<nav className="navbar is-transparent" >
+			<nav className="navbar is-transparent">
 				<div className="navbar-brand">
-				<AdminAuth />
-				
-					
 					<div
 						onClick={() => setActive(!active)}
 						className={`navbar-burger burger ${
@@ -42,9 +37,7 @@ const Nav = (props) => {
 					onClick={() => setActive(!active)}
 					className={`navbar-menu ${active ? "is-active" : ""} `}
 				>
-					<div className="navbar-end">
-						{renderNavItem()}
-					</div>
+					<div className="navbar-end">{renderNavItem()}</div>
 				</div>
 			</nav>
 		</div>
