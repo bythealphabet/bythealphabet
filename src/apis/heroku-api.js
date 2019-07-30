@@ -27,7 +27,7 @@ const create = (data )=> {
 };
 
 const read = params => {
-  return fetch(`/api/article/${params}`, {
+  return fetch(`https://damp-shore-63132.herokuapp.com/api/article/${params}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
