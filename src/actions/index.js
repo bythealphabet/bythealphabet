@@ -1,4 +1,5 @@
-import * as call from "../apis/article-api";
+// import * as call from "../apis/article-api";
+import * as call from "../apis/heroku-api";
 // import { signin, signout } from "../apis/auth/api-auth";
 // import auth from "../apis/auth/auth-helper";
 import * as art from "./types";

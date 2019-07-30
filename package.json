@@ -2,8 +2,7 @@
   "name": "lucas-blog",
   "version": "0.1.0",
   "private": true,
-  // "proxy": "http://localhost:5000",
-  "proxy": "https://damp-shore-63132.herokuapp.com/",
+  "proxy": "http://localhost:5000",
   "homepage": "http://bythealphabet.com/",
   "dependencies": {
     "bulma": "^0.7.5",
