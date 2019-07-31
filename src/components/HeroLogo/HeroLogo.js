@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './HeroLogo.module.css'
-import threedlogo from '../../assets/img/3dlogo.png'
-import twodlogo from '../../assets/img/2dlogo.png'
+
+import logo from '../../assets/img/logo.png'
 import Tilt from 'react-tilt'
 import {Link} from 'react-router-dom'
 
@@ -16,7 +16,7 @@ const heroLogo =({pages})=>{
 				<div className={`center  ${styles.Container}`}>
 					<Link to={"/"} >
 						<figure className="image center">
-						  <img src={threedlogo} alt="bythealphabet.com logo img"/>
+						  <img src={logo} alt="bythealphabet.com logo img"/>
 						</figure>
 					</Link>
 				   
@@ -32,7 +32,7 @@ const heroLogo =({pages})=>{
 			   <div className="Tilt-inner">
 			  <Link to={"/"} >
 			   	<figure className="image center">
-			   		   <img src={twodlogo} alt="bythealphabet.com logo img"/>
+			   		   <img src={logo} alt="bythealphabet.com logo img"/>
 			   		 </figure>
 			   </Link>
 			   		 

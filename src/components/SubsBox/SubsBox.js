@@ -7,7 +7,7 @@ const Input = ({placeholder}) => {
 		<div className="field">
 			<div className="control">
 				<input
-					className="input"
+					className="input is-radiusless is-link"
 					type="text"
 					placeholder={placeholder}
 				/>

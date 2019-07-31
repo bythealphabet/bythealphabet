@@ -19,7 +19,7 @@ const Nav = props => {
 
 	return (
 		<div className="container">
-			<nav className="navbar is-transparent">
+			<nav className="navbar is-transparent" style={{height: '100px'}}>
 				<div className="navbar-brand">
 					<div
 						onClick={() => setActive(!active)}
