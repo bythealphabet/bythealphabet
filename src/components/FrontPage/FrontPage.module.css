@@ -1,0 +1,22 @@
+.Container{
+	display: flex;
+	justify-content: center;
+	justify-content: space-around;
+}
+
+.Sides{
+	width: 75%;
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); 
+
+}
+
+.Right, .Left {
+	margin: 20px;
+	width: 50%;
+	/*border: solid;*/
+	display: flex;
+	justify-content: center;
+}
+

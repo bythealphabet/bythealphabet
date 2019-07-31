@@ -2,6 +2,7 @@ import React from "react";
 import HeroLogo from "../../components/HeroLogo/HeroLogo";
 import FrontPage from "../../components/FrontPage/FrontPage";
 import SlidingButton from '../../components/buttons/SlidingButton/SlidingButton'
+import SubsBox from '../../components/SubsBox/SubsBox'
 
 const pagesArray = [
 	{name: "Articles", path: "/articles"},
@@ -25,13 +26,18 @@ const renderButtons = () =>{
 	return buttons		       
 }
 
+const renderSubsBox = () =>{
+	return <SubsBox />
+}
+
+
 
 const Home = props => {
 	const index = true;
 	return (
 		<div className={`section `}>
 			<HeroLogo pages={index} />
-			<FrontPage right={renderButtons()} />
+			<FrontPage right={renderButtons()} left={renderSubsBox()} />
 		</div>
 	);
 };
