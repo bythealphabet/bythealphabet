@@ -34,9 +34,10 @@ const renderSubsBox = () => {
 const Home = props => {
 	const index = true;
 	return (
-		<div className={`section ${styles.Container}  `}>
-	{/*<div className={styles.SectionBckgr}></div>*/}
-			<HeroLogo pages={index} />
+		<div className={` ${styles.Container}  `}>
+	<div className={styles.ContainerBckgr}></div>
+	<div className={styles.SectionBckgr}><HeroLogo pages={index} /></div>
+			
 			
 			<FrontPage right={renderButtons()} left={renderSubsBox()} />
 		</div>

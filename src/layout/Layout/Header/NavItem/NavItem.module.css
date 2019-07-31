@@ -1,3 +1,25 @@
+
 .Item{
 	cursor: pointer;
+}
+
+.Inner{
+	display: flex;
+	justify-content: center;
+	width: 80px;
+	height: 60px;
+	z-index: 100;
+	padding: 20px;
+	transition: 0.5s ease-out;
+}
+
+
+
+.Inner:hover{
+	background-color: rgba(240, 248, 255, 0.911);
+	box-shadow: 0 4px 4px rgba(248, 248, 248, 0.596),
+                0 6px 6px rgba(0, 0, 0, 0.1),
+                0 8px 8px rgba(0, 0, 0, 0.1),
+                0 12px 12px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05) translateY(-0.20em) perspective(1000px) rotateX(20deg);
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './HeroLogo.module.css'
-
+import Aux from '../../hoc/_Aux'
 import logo from '../../assets/img/logo.png'
 import Tilt from 'react-tilt'
 import {Link} from 'react-router-dom'
@@ -12,7 +12,7 @@ const heroLogo =({pages})=>{
 	if(pages){
 		
 		hero = (
-			<div className={`hero-body  ${styles.Center}`}>
+			<div className={`  ${styles.Center}`}>
 				<div className={`center  ${styles.Container}`}>
 					<Link to={"/"} >
 						<figure className="image center">
@@ -43,9 +43,9 @@ const heroLogo =({pages})=>{
 	}
 
 	return(
-		<div>
+		<Aux>
 			{hero}
-		</div>
+		</Aux>
 		    
 	)
 }

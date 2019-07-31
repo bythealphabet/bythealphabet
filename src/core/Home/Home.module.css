@@ -1,13 +1,36 @@
 .Container{
-	position: relative;
+	/*position: relative;*/
+}
+
+.ContainerBckgr{
+	opacity: .3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100vw;
+	background:
+linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+background-color:#e1ebbd;
+background-size: 128px 128px;
+    z-index: 0
 }
 .SectionBckgr{
-	position: absolute;
-	top: 50px;
-	left: 50px;
-	height: 350px;
-	width: 90vw;
-	background-color: #cccc;
-	clip-path: polygon(40% 50%, 85% 80%, 70% 95%, 20% 62% );
-	z-index: 0;
+	z-index: 10;
+	position: relative;
+	transform: translate(-50%, 2%);
+	/*border-radius: 10px;*/
+	top: 50%;
+	left: 50%;
+	height: 8%;
+	width: 100vw;
+	/* background-image: linear-gradient(120deg, rgba(217, 227, 243, 0.342) 0%, rgba(223, 229, 231, 0.329) 100%); */
+	z-index: 10;
+	/* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1),
+                0 6px 6px rgba(0, 0, 0, 0.1),
+                0 8px 8px rgba(0, 0, 0, 0.1),
+                0 12px 12px rgba(0, 0, 0, 0.1); */
+    /* transform: scale(1.05) translateY(-0.25em) perspective(2000px) rotateX(2deg); */
 }

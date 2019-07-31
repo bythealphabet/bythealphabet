@@ -1,16 +1,14 @@
-import React from 'react'
-import styles from './NavItem.module.css'
-import {Link} from 'react-router-dom'
+import React from "react";
+import styles from "./NavItem.module.css";
+import { NavLink  } from "react-router-dom";
 
+const navItem = props => {
+	return (
+		<NavLink  className={`navbar-item ${styles.Item} `} to={props.path} activeStyle={{ color: 'none' }}>
+			<div className={styles.Inner}>{props.link}</div>
+			<div className={styles.Outer}></div>
+		</ NavLink >
+	);
+};
 
-
-const navItem =(props)=>{
-	return(
-		<Link className= {`navbar-item ${styles.Item} `} to={props.path}>
-		 {props.link}
-		</Link>
-	)
-}
-
-
-export default navItem
+export default navItem;

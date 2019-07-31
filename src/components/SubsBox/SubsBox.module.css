@@ -1,17 +1,3 @@
-/*.Container{
-	width: 300px;
-	height: 160px;
-	transition: 0.5s ease-out;
-}
-
-.Container:hover{
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1),
-                0 6px 6px rgba(0, 0, 0, 0.1),
-                0 8px 8px rgba(0, 0, 0, 0.1),
-                0 12px 12px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05) translateY(-0.25em) perspective(300px) rotateX(20deg);
-}*/
-
 
 .Container{
 	font-family: 'Ubuntu Mono', monospace;

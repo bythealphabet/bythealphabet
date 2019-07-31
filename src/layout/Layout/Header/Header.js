@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem/NavItem";
+import styles from './Header.module.css'
 
 const navPath = [
 	{ link: "Home", path: "/" },
@@ -18,8 +19,8 @@ const Nav = props => {
 	const [active, setActive] = useState(false);
 
 	return (
-		<div className="container">
-			<nav className="navbar is-transparent" style={{height: '100px'}}>
+		
+			<nav className= {`navbar is-transparent ${styles.NavBar} `} >
 				<div className="navbar-brand">
 					<div
 						onClick={() => setActive(!active)}
@@ -35,12 +36,12 @@ const Nav = props => {
 
 				<div
 					onClick={() => setActive(!active)}
-					className={`navbar-menu ${active ? "is-active" : ""} `}
+					className={`navbar-menu${active ? "is-active" : ""} `}
 				>
 					<div className="navbar-end">{renderNavItem()}</div>
 				</div>
 			</nav>
-		</div>
+		
 	);
 };
 
